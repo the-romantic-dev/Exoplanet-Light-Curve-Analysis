@@ -14,18 +14,18 @@ with open(req_file, "r") as fh:
 
 # Do setup
 setup(
-    name='elca',
+    name='ELCA',
     version='1.0.0',
     description='A package for analyzing light curves of transiting exoplanets',
     url='https://github.jpl.nasa.gov/kpearson/Exoplanet-Light-Curve-Analysis',
     author='Kyle Pearson',
     author_email='kpearso@jpl.nasa.gov',
     license='MIT',
-    packages=find_packages(include=['elca', 'elca.*']),
+    packages=find_packages(include=['ELCA', 'ELCA.*']),
     install_requires=install_requires,
     ext_modules=[ Extension(
-        'elca/C/lib_transit', 
-        ["elca/C/MandelTransit.c"],
+        'ELCA/C/lib_transit', 
+        ["ELCA/C/MandelTransit.c"],
         extra_compile_args=["-Ofast"])
         ],
 )
