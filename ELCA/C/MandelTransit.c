@@ -492,7 +492,7 @@ void occultquad(double *t, double p, double ar, double P, double i, double gamma
 	double *Z, *phi, *new_phi; int ii;
 	int Npoints = (int)n;
 	// printf("p = %f, ar = %f, e = %f, i = %f, longPericenter = %f, P = %f, tmid = %f\n", 
-       p, ar, e, i, longPericenter, P, tmid);
+    //    p, ar, e, i, longPericenter, P, tmid);
 
 
     Z = (double *) malloc(sizeof(double)*Npoints);
