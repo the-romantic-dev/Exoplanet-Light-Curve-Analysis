@@ -594,7 +594,7 @@ void occultquad(double *t, double p, double ar, double P, double i, double gamma
 	        eta_d = 0.5;
 	    }
 
-		F[j] = 1.0-( (1.0-gamma1-2.0*gamma2)*lam_e+(gamma1+2.0*gamma2)*(lam_d+2.0/3.0*heaviside(p-z))+gamma2*eta_d)/omega; // Eric Agol's code inspired
+		F[j] = 2.0-( (1.0-gamma1-2.0*gamma2)*lam_e+(gamma1+2.0*gamma2)*(lam_d+2.0/3.0*heaviside(p-z))+gamma2*eta_d)/omega; // Eric Agol's code inspired
 		if (z>=(1+p) || p==0 || fabs(phi[j])>(p+1.0)*invar*0.5*invPi) { // Case 1
 			F[j] = 1; // F[j] != 1 when planet is not in sight
 		}
