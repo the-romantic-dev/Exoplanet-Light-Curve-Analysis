@@ -97,12 +97,12 @@ def format_args(f):
             values = args[1]
         data = {}
         data['time'] = np.require(t,dtype=ctypes.c_double,requirements='C')
-        data['model'] = np.require(np.zeros(len(t)),dtype=ctypes.c_double,requirements='C')
+        data['model'] = np.require(np.ones(len(t)),dtype=ctypes.c_double,requirements='C')
         data['cvals'] = np.require(np.zeros(5),dtype=ctypes.c_double,requirements='C')
         if 'transit' in f.__name__ or 'orbit' in f.__name__ or 'anomaly' in f.__name__:
-            keys=['rprs','ars','per','inc','u1','u2','ecc','omega','tmid']
+            keys=['rp','ar','per','inc','u1','u2','ecc','ome','tm']
         else: # order matters
-            keys=['fpfs','rprs','ars','per','inc','u1','u2','ecc','omega','tmid']
+            keys=['fpfs','rp','ar','per','inc','u1','u2','ecc','ome','tm']
         data['vals'] = [values.get(k,0) for k in keys]
         for i,k in enumerate(['c0','c1','c2','c3','c4']): data['cvals'][i] = values.get(k,0)
         return f(*args, **data)
