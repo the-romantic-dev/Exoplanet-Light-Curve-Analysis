@@ -491,6 +491,9 @@ void occultquad(double *t, double p, double ar, double P, double i, double gamma
 {
 	double *Z, *phi, *new_phi; int ii;
 	int Npoints = (int)n;
+	printf("p = %f, ar = %f, e = %f, i = %f, longPericenter = %f, P = %f, tmid = %f\n", 
+       p, ar, e, i, longPericenter, P, tmid);
+
 
     Z = (double *) malloc(sizeof(double)*Npoints);
     phi = (double *) malloc(sizeof(double)*Npoints);
@@ -593,7 +596,7 @@ void occultquad(double *t, double p, double ar, double P, double i, double gamma
 	    	lam_d = 0.0;
 	        eta_d = 0.5;
 	    }
-		printf("j = %d, z = %f, p = %f, phi[j] = %f\n", j, z, p, phi[j]);
+		// printf("j = %d, z = %f, p = %f, phi[j] = %f\n", j, z, p, phi[j]);
 		F[j] = 1.0-( (1.0-gamma1-2.0*gamma2)*lam_e+(gamma1+2.0*gamma2)*(lam_d+2.0/3.0*heaviside(p-z))+gamma2*eta_d)/omega; // Eric Agol's code inspired
 		if (z>=(1+p) || p==0 || fabs(phi[j])>(p+1.0)*invar*0.5*invPi) { // Case 1
 			
