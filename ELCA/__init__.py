@@ -1,1 +1,1 @@
-from ELCA.tools import transit, lc_fitter
+from ELCA.tools import transit_nl as transit, lc_fitter
